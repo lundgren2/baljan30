@@ -2,6 +2,16 @@
 // Layout/header
 //==============================================
 
+//  +media-breakpoint-up(sm) {
+//   body {
+//     background: #000;
+//   }
+// }
+//
+
+body.fixed-navbar main.bd-masthead {
+  padding-top: (82px + 40px); // navbar-height + main-toppadding
+}
 .Baljan__header {
 	margin-top: $margin;
 }
@@ -9,6 +19,22 @@
   padding-right: 10px;
 }
 .navbar {
+  transition: all 300ms;
+  width: 100%;
+  z-index: 10;
+  &.fixed {
+    position: fixed;
+    background: #FFF;
+    box-shadow: 0 2px 5px -1px rgba(0,0,0,.09);
+    .btn {
+      background-color: $pink;
+      color: white;
+      &:hover {
+        background-color: transparent;
+        color: $pink;
+      }
+    }
+  }
   ul {
     li
     {
@@ -47,6 +73,15 @@
         //   transition: transform 250ms ease-in-out;
         //   margin-top: 5px;
         // }
+
+        +media-breakpoint-down(md) {
+          color: green;
+              background: green;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+        }
       }
     }
   }
